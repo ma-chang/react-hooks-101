@@ -1,8 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import reducer from '../reducers'
+
 const App = (props) => {
+  const [state, dispatch] = useReducer(reducer, [])
+  
+  const addEvent = e => {
+    e.preventDefault()
+    console.log('addEvent')
+  }
+
   return (
     <>
       <div className="container-fluid">
@@ -17,7 +26,7 @@ const App = (props) => {
             <input className="form-control" id="formEventBody" />
           </div>
           <button className="btn btn-primary">イベントを作成する</button>
-          <button className="btn btn-danger">イベントを削除する</button>A
+          <button className="btn btn-danger">イベントを削除する</button>
         </form>
         <h4>イベント一覧</h4>
         <table className="table-bordered">
