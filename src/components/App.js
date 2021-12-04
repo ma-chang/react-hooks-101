@@ -2,6 +2,7 @@ import React, { useState, useReducer } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import Event from "./Event";
 import reducer from "../reducers";
 
 const App = () => {
@@ -17,8 +18,10 @@ const App = () => {
       title,
       body,
     });
+    setTitle("");
+    setBody("");
   };
-    console.log({state });
+   //console.log({ state });
   return (
     <>
       <div className="container-fluid">
@@ -48,16 +51,19 @@ const App = () => {
           <button className="btn btn-danger">イベントを削除する</button>
         </form>
         <h4>イベント一覧</h4>
-        <table className="table-bordered">
+        <table className="table table-hover">
           <thead>
             <tr>
               <th scope="col">ID</th>
               <th scope="col">タイトル</th>
               <th scope="col">ボディー</th>
+              <th />
             </tr>
           </thead>
           <tbody>
-            <tr></tr>
+            {state.map((event, index) => (
+              <Event key={index} event={event} dispatch={dispatch} />
+            ))}
           </tbody>
         </table>
       </div>
