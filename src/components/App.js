@@ -12,6 +12,7 @@ console.log(AppContext);
 const App = () => {
   const initialState = {
     events: [],
+    operationLogs: []
   };
   const [state, dispatch] = useReducer(reducer, initialState);
   console.log(state, ' in App.js');
