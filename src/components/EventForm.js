@@ -1,7 +1,5 @@
 import React, { useContext, useState } from 'react'
 
-import App from './App';
-
 import { CREATE_EVENT, DELETE_ALL_EVENTS } from '../actions'
 import AppContext from '../contexts/AppContext'
 
@@ -67,7 +65,7 @@ const EventForm = () => {
         <button
           className="btn btn-danger"
           onClick={deleteAllEvents}
-          disabled={state.length === 0}
+          disabled={state.events.aritylength === 0}
         >
           全てのイベントを削除する
         </button>
