@@ -8,11 +8,12 @@ const Event = ({ event }) => {
   const { dispatch } = useContext(AppContext);
   const handleClickDeleteButton = () => {
     const result = window.confirm(`イベント{id=${id}}を本当に削除しますか?`);
-    if (result)
+    if (result) {
       dispatch({
         type: DELETE_EVENT,
         id,
       });
+    }
   };
   return (
     <tr>
