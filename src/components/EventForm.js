@@ -14,11 +14,11 @@ const EventForm = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
-  console.log(state, ' in EventForm.js');
+  //console.log(state, ' in EventForm.js');
 
   const addEvent = (e) => {
     e.preventDefault();
-    console.log({ title, body });
+   // console.log({ title, body });
     dispatch({
       type: CREATE_EVENT,
       title,
